@@ -100,6 +100,13 @@ require("lazy").setup({
     },
 	{
 		"EdenEast/nightfox.nvim",
-		name = "carbonfox"
+		name = "carbonfox",
+		config = function()
+			require("nightfox").setup{
+				options = {
+					transparent = true
+				}
+			}
+		end
 	}
 })
