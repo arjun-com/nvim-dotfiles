@@ -28,7 +28,7 @@ require("lazy").setup({
 		"nvim-treesitter/nvim-treesitter",
 		config = function()
 			require("nvim-treesitter").setup {
-				ensure_installed = { "javascript", "typescript", "tsx" },
+				ensure_installed = { "javascript", "typescript", "jsx", "tsx", "go", "c", "c++", "rust", "python" },
 				highlight = { enable = true },
 				context_commentstring = { enable = true }
 			}
@@ -51,6 +51,24 @@ require("lazy").setup({
 		dependencies = { "nvim-lua/plenary.nvim" }
 	},
 	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
+		keys = {
+			{
+				"<leader>?",
+				function()
+					require("which-key").show({ global = false })
+				end,
+				desc = "Buffer Local Keymaps (which-key)",
+			},
+		},
+	},
+	{
 		"terrortylor/nvim-comment",
 		dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
 		config = function()
@@ -71,7 +89,7 @@ require("lazy").setup({
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup {
-				ensure_installed = { "lua_ls", "tailwindcss", "tsserver", "gopls", "rust_analyzer", "pyright", "html" }
+				ensure_installed = { "lua_ls", "clangd", "tailwindcss", "tsserver", "gopls", "rust_analyzer", "pyright", "html", "eslint", "cssls", "emmet_ls", "graphql" }
 			}
 		end
 	},
@@ -81,6 +99,12 @@ require("lazy").setup({
 	{
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
+		sources = {
+			{ name = "nvim_lsp" },
+			{ name = "luasnip" },
+			{ name = "buffer" },
+			{ name = "path" }
+		},
 		dependencies = {
 			{
 				"L3MON4D3/LuaSnip",
@@ -93,6 +117,19 @@ require("lazy").setup({
 			}
 		}
 	},
+	-- {
+	-- 	"hrsh7th/cmp-nvim-lsp",
+	-- 	event = { "BufReadPre", "BufNewFile" },
+	-- 	config = function()
+	-- 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
+	--
+	-- 		local capabilities = cmp_nvim_lsp.default_capabilities()
+	--
+	-- 		vim.lsp.config("*", {
+	-- 			capabilities = capabilities
+	-- 		})
+	-- 	end
+	-- },
 	{
 		"stevearc/conform.nvim",
 		config = function()
