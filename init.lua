@@ -6,3 +6,6 @@ require("plugins.options")
 require('plugins.lsp')
 -- require('plugins.lualine')
 -- require('plugins.treesitter')
+
+
+vim.cmd("colorscheme retrobox")

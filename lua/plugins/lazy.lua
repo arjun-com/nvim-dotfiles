@@ -89,7 +89,7 @@ require("lazy").setup({
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup {
-				ensure_installed = { "lua_ls", "clangd", "tailwindcss", "tsserver", "gopls", "rust_analyzer", "pyright", "html", "eslint", "cssls", "emmet_ls", "graphql" }
+				ensure_installed = { "lua_ls", "clangd", "tailwindcss", "ts_ls", "gopls", "rust_analyzer", "pyright", "html", "eslint", "cssls", "emmet_ls", "graphql" }
 			}
 		end
 	},
@@ -117,19 +117,6 @@ require("lazy").setup({
 			}
 		}
 	},
-	-- {
-	-- 	"hrsh7th/cmp-nvim-lsp",
-	-- 	event = { "BufReadPre", "BufNewFile" },
-	-- 	config = function()
-	-- 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
-	--
-	-- 		local capabilities = cmp_nvim_lsp.default_capabilities()
-	--
-	-- 		vim.lsp.config("*", {
-	-- 			capabilities = capabilities
-	-- 		})
-	-- 	end
-	-- },
 	{
 		"stevearc/conform.nvim",
 		config = function()

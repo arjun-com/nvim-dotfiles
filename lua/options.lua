@@ -11,7 +11,7 @@ vim.opt.autoindent = true
 
 vim.opt.termguicolors = true -- For bufferline
 
-vim.opt.mouse = "a" -- Copies to clipboard on macos, doesnt work for all OSes.
+vim.opt.mouse = "a"          -- Copies to clipboard on macos, doesnt work for all OSes.
 
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
