@@ -128,7 +128,8 @@ require("lazy").setup({
 					html = { "prettier" },
 					json = { "prettier" },
 					yaml = { "prettier" },
-					python = { "isort", "black" }
+					python = { "isort", "black" },
+					rust = { "rustfmt" }
 				},
 				format_on_save = {
 					lsp_fallback = true,
